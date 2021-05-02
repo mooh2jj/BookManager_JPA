@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
-//@RequiredArgsConstructor        // 꼭 필요한 파라미터만 @NonNull이 있는 인자만
+@RequiredArgsConstructor        // 꼭 필요한 파라미터만 @NonNull이 있는 인자만
 //@EqualsAndHashCode
 @Data // @Getter @Setter @RequiredArgsConstructor @ToString @EqualsAndHashCode.
 @Builder

@@ -15,8 +15,13 @@ class UserRepositoryTest {
 
     @Test
     void crud(){
-        userRepository.save(new User());
+//        userRepository.save(new User());
+        userRepository.save(new User("david", "david@fastcampus.com"));
 
-        System.out.println(">>> "+ userRepository.findAll());
+        User user = userRepository.findById(1L).orElseThrow(RuntimeException::new);
+        user.setEmail("martin-updated@fastcampus.com");
+
+//        System.out.println(">>> "+ userRepository.findAll());
+        userRepository.save(user);
     }
 }
