@@ -3,6 +3,9 @@ package com.fastcampus.jpa.bookmanager.controller;
 import com.fastcampus.jpa.bookmanager.dto.CarDto;
 import com.fastcampus.jpa.bookmanager.dto.PostRequestDto;
 import com.fastcampus.jpa.bookmanager.dto.PutRequestDto;
+import com.fastcampus.jpa.bookmanager.dto.UserDto;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -18,6 +21,20 @@ public class ApiController {
             System.out.println("value :" + stringObjectEntry.getValue());
         });
     }*/
+
+    //Text
+    @GetMapping("/echo")
+    public String echo(@RequestParam String account){
+
+        return account;
+    }
+
+    //Json
+    // req -> object mapper -> object -> method -> object -> object mapper -> json -> response
+    @PostMapping("/json")
+    public UserDto json(@RequestBody UserDto user){
+        return user;
+    }
 
     @PostMapping("/post")
     public void post(@RequestBody PostRequestDto postRequestDto){
@@ -38,5 +55,13 @@ public class ApiController {
 
         return putRequestDto;
     }
+
+    @PutMapping("/put")
+    public ResponseEntity<PutRequestDto> put(@RequestBody PutRequestDto putRequestDto){
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(putRequestDto);
+    }
+
+
 
 }
