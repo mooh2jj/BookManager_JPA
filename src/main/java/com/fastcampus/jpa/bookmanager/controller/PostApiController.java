@@ -21,4 +21,11 @@ public class PostApiController {
     public void post(@RequestBody PostRequestDto postRequestDto){
         System.out.println("postRequestDto :" + postRequestDto );
     }
+
+    @DeleteMapping("/delete/{userId}")
+    public void delete(@PathVariable String userId){
+        System.out.println("userId :" + userId );
+    }
+    // delete -> 리소스 이미 없어도 삭제 ok 뜸!
+
 }
