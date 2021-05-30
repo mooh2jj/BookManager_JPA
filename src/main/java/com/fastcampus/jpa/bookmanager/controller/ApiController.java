@@ -22,6 +22,23 @@ public class ApiController {
         });
     }*/
 
+    // @RequestParam이 들어가줘야 한다. Map은!
+    @GetMapping("/queryGet")
+    public String queryGet(@RequestParam Map<String, String> querymap) {
+
+        StringBuilder sb = new StringBuilder();
+
+        querymap.entrySet().forEach(entry -> {
+            System.out.println("entry.getKey() :" + entry.getKey());
+            System.out.println("entry.getValue() :" + entry.getValue());
+            System.out.println("\n");
+
+            sb.append(entry.getKey()+"=" +entry.getValue() +"\n");
+        });
+
+        return sb.toString();
+    }
+
     //Text
     @GetMapping("/echo")
     public String echo(@RequestParam String account){
