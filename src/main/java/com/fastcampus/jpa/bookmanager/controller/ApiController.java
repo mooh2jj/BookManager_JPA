@@ -50,12 +50,20 @@ public class ApiController {
     // req -> object mapper -> object -> method -> object -> object mapper -> json -> response
     @PostMapping("/json")
     public UserDto json(@RequestBody UserDto user){
-        return user;
+        return user;    // 200 ok
     }
 
     @PostMapping("/post")
     public void post(@RequestBody PostRequestDto postRequestDto){
         System.out.println("postRequestDto :" + postRequestDto );
+    }
+
+    @PostMapping("/queryPost")
+    public void queryPost(@RequestBody Map<String, Object> requestData) {
+        requestData.forEach((key, value) -> {
+            System.out.println("key: " + key);
+            System.out.println("value: " + value);
+        });
     }
 
     @DeleteMapping("/delete/{userId}")

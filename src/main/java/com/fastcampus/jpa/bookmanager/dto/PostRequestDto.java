@@ -11,7 +11,7 @@ public class PostRequestDto {
     private String address;
     private String password;
 
-    @JsonProperty("phone_number")
+    @JsonProperty("phone_number")   // 전송하는 게 스네이크케이스라면
     private String phoneNumber;
 
 
