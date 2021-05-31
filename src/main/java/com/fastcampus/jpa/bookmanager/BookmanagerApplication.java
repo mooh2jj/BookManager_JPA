@@ -8,6 +8,8 @@ public class BookmanagerApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(BookmanagerApplication.class, args);
+
+
     }
 
 }
